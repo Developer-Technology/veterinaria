@@ -1,0 +1,5 @@
+ARCHIVOS SQL INFO
+
+db-vetpets-tablas.sql : tiene solo las tablas, sin los procedimientos almacenados.
+
+db-vetpets-v.sql : Base de datos completa, con los procedimientos almacenados. Crear Base de datos e importar este archivo .sql.
