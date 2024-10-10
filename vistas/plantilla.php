@@ -1,3 +1,13 @@
+<?php
+
+// Iniciar sesión si no ha sido iniciada
+if (session_status() == PHP_SESSION_NONE) {
+	session_start(['name' => 'VETP']);
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -27,7 +37,7 @@
   if ($vistas=="login" || $vistas=="404"){
      require_once "./vistas/contenidos/".$vistas."-view.php";
   }else{
-    session_start(['name'=>'VETP']);
+    //session_start(['name'=>'VETP']);
     
     // pagina captura url en views .htacces
     $pagina=explode("/", $_GET['views']);

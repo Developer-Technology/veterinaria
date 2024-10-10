@@ -87,7 +87,12 @@
 					$_SESSION['privilegio_vetp']=$row['userPrivilegio'];
 					// cerrar sesion numero unico userPrivilegio
 					$_SESSION['token_vetp']=md5(uniqid(mt_rand(),true));
-					return header("Location: ".SERVERURL."home/");
+					//return header("Location: ".SERVERURL."home/");
+					 // Redirigir usando JavaScript para mayor control del cliente
+					 echo '
+					 <script>
+						 window.location.href = "' . SERVERURL . 'home/";
+					 </script>';
 				}else{
 					echo '
 						<script>

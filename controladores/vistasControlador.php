@@ -21,9 +21,17 @@
 
             if(isset($_GET['views'])){
               $ruta=explode("/", $_GET['views']);
+              $vista = $ruta[0];
               // print_r("hola soy controlador vista");
               # divicion asi MVC/views/0/
-              $respuesta=vistasModelo::obtener_vistas_modelo($ruta[0]);
+
+               // Si está logueado y quiere acceder al login, redirigir al home
+                if ($vista == "login" && isset($_SESSION['token_vetp'])) {
+                    header("Location: " . SERVERURL . "home/");
+                    exit();
+                }
+
+              $respuesta=vistasModelo::obtener_vistas_modelo($vista);
               
              }else{
                 //variable views no definida
